@@ -1,6 +1,6 @@
 ---
   - name: Playbook to install packages
-    hosts: dev
+    hosts: all
     become: true
 
 
