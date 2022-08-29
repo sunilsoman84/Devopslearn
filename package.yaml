@@ -1,0 +1,11 @@
+---
+  - name: Playbook to install packages
+    hosts: dev
+    become: true
+
+
+    tasks:
+    - name: Install the Apache package
+      apt:
+        name: apache2
+        state: present
