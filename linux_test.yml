@@ -1,5 +1,5 @@
 --- 
-- hosts: localhost
+- hosts: 192.168.56.131
   become: yes
   become_user: root
   tasks:
