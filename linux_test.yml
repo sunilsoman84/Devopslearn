@@ -18,6 +18,7 @@
 
     - name: "Print the file name output"
       debug:
-        msg: "{{ file_name }}"
+        msg: "{{ file_name\n }}"
+        var: file_name.stdout_lines\n
 
 
