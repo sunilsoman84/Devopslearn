@@ -13,7 +13,7 @@
     #   chdir: /home/vagrant
     
     - name: "List the items of created file"
-      command: "ls -l /home/vagrant"
+      command: "ls /home/vagrant"
       register: file_name
 
     - name: "Print the file name output"
