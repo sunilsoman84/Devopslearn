@@ -1,0 +1,12 @@
+--- 
+- 
+  name: "Playbook to test the command output loop"
+  become: yes
+  tasks:
+    - name: "Ansible command module multiple commands"
+      command: "touch {{ item }}"
+      with_items:
+        - file1.txt
+        - file2.txt
+        - file3.txt
+      register: file_name
