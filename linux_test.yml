@@ -13,7 +13,7 @@
        chdir: /home/vagrant
       register: file_name
 
-    - name: Print the file name output
+    - name: "Print the file name output"
       debug:
       msg: "{{ file_name }}"
 
