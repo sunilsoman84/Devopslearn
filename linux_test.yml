@@ -1,6 +1,5 @@
 --- 
-- 
-  name: "Playbook to test the command output loop"
+- hosts: localhost
   become: yes
   tasks:
     - name: "Ansible command module multiple commands"
