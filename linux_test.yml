@@ -9,4 +9,5 @@
         - file1.txt
         - file2.txt
         - file3.txt
+      args: chdir: /home/vagrant
       register: file_name
