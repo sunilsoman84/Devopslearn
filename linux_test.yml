@@ -1,14 +1,31 @@
+#--- 
+#- 
+#  name: "Playbook to test the command output loop"
+#  become: yes
+#  tasks:
+#    - name: "Ansible command module multiple commands"
+#      command: "touch {{ item }}"
+#      with_items:
+#        - file1.txt
+#        - file2.txt
+#        - file3.txt
+#      args: 
+#        - chdir: /home/vagrant
+#      register: file_name
+
 --- 
 - 
+  become: true
   name: "Playbook to test the command output loop"
-  become: yes
-  tasks:
-    - name: "Ansible command module multiple commands"
+  tasks: 
+    - 
+      args: 
+        - 
+          chdir: /home/vagrant
       command: "touch {{ item }}"
-      with_items:
+      name: "Ansible command module multiple commands"
+      register: file_name
+      with_items: 
         - file1.txt
         - file2.txt
         - file3.txt
-      args: 
-        - chdir: /home/vagrant
-      register: file_name
