@@ -11,10 +11,13 @@
         - file3.txt
       args: 
        chdir: /home/vagrant
+    
+    - name: "List the items of created file"
+      command: "ls -l /home/vagrant"
       register: file_name
 
     - name: "Print the file name output"
       debug:
-      msg: "{{ file_name }}"
+        msg: "{{ file_name }}"
 
 
