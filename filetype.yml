@@ -9,7 +9,7 @@
       name: "List the items of created file"
       register: file_name
     - 
-      command: "cat {{item}}"
+      command: cat "{{item}}"
       debug: 
         msg: "{{item}}"
       name: "Print the file name output and cat"
