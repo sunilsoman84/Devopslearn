@@ -1,0 +1,16 @@
+--- 
+- 
+  become: true
+  become_user: root
+  hosts: "192.168.56.131"
+  tasks: 
+    - 
+      command: "ls /home/vagrant"
+      name: "List the items of created file"
+      register: file_name
+    - 
+      command: "cat {{item}}"
+      debug: 
+        msg: "{{item}}"
+      name: "Print the file name output and cat"
+      with_items: "{{file_name.stdout_lines}}"
