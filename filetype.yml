@@ -9,8 +9,10 @@
       name: "List the items of created file"
       register: file_name
     - 
-      command: cat "{{item}}"
+      command: cat {{file}}
       debug: 
         msg: "{{item}}"
+        vars:
+          file: "{{item}}"
       name: "Print the file name output and cat"
       with_items: "{{file_name.stdout_lines}}"
