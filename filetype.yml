@@ -15,7 +15,8 @@
     - name: some name
       #shell: cat {{ item }}
       set_fact:
-        annoying: {{ item }}
+        annoying: 
+          - "{{ item }}"
       with_items: "{{ file_name.stdout_lines }}"
       
     - name: Show information
