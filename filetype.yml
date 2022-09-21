@@ -10,8 +10,6 @@
     - name: Print the file name
       set_fact:
         file: "{{ file_name.stdout_lines }}"
-    - debug:
-        msg: "{{item}}"
       read: "{{item}}"  
       with_items: "{{ file_name.stdout_lines }}"
 
