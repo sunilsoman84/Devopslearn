@@ -11,9 +11,8 @@
       debug:
         msg: "{{ item }}"
       with_items: "{{ file_name.stdout_lines }}"
-      register: op_value
-      
+            
     - name: some name
       shell: cat {{ item }}
-      with_items: "{{ op_value }}"
+      with_items: "{{ file_name.stdout_lines }}"
       
