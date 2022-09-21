@@ -8,8 +8,6 @@
       register: file_name
       
     - name: Set variables
-      set_fact:
-        file: "{{ items }}"
       debug:
         msg: "{{ items }}"
       with_items: "{{ file_name.stdout_lines }}"
