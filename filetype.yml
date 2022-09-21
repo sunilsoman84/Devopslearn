@@ -8,7 +8,12 @@
       register: file_name
       
     - name: Set variables
-      shell: cat {{ items }}
-      register: annoying
+      set_fact:
+        file: "{{ items }}"
       with_items: "{{ file_name.stdout_lines }}"
+      register: annoying
+      
+    - name: print variable
+      debug:
+        msg: "{{ annoying.stdout_lines }}"
       
