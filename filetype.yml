@@ -6,17 +6,9 @@
     - name: "List the items of created file"
       command: "ls /home/vagrant"
       register: file_name
-
-    - name: Print the file name
-      set_fact:
-        file: "{{ file_name.stdout_lines }}"
-      read: "{{item}}"  
+      
+    - name: Set variables
+      shell: cat {{ item.stdout_lines }}
+      register: annoying
       with_items: "{{ file_name.stdout_lines }}"
-
-    - name: read the file name output
-      command: "cat {{ read }}"
-      register: op_txt
-
-    - name: print the output
-      debug:
-        msg: "{{ op_txt.stdout_lines }}"
+      
