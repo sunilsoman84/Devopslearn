@@ -13,6 +13,12 @@
       with_items: "{{ file_name.stdout_lines }}"
             
     - name: some name
-      shell: cat {{ item }}
+      #shell: cat {{ item }}
+      set_fact:
+        annoying: {{ item }}
       with_items: "{{ file_name.stdout_lines }}"
+      
+    - name: Show information
+      debug:
+        var: annoying
       
