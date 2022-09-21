@@ -15,7 +15,7 @@
     - name: some name
       #shell: cat {{ item }}
       set_fact:
-        myvar: "{{ file_name.stdout_lines }}"
+        myvar: "{{ file_name.stdout }}"
       
     - name: Show information
       debug:
