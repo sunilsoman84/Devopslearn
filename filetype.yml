@@ -9,13 +9,14 @@
 
     - name: Print the file name
       set_fact:
-        file: "{{ file_name.stdout_lines }}"
+        file: "{{ item }}"
     - debug:
         msg: "{{item}}"
+      read: "{{item}}"  
       with_items: "{{ file_name.stdout_lines }}"
 
     - name: read the file name output
-      command: "cat {{ file }}"
+      command: "cat {{ read }}"
       register: op_txt
 
     - name: print the output
