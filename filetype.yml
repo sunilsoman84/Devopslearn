@@ -10,10 +10,7 @@
     - name: Set variables
       set_fact:
         file: "{{ items }}"
-      with_items: "{{ file_name.stdout_lines }}"
-      register: annoying
-      
-    - name: print variable
       debug:
-        msg: "{{ annoying.stdout_lines }}"
+        msg: "{{ items }}"
+      with_items: "{{ file_name.stdout_lines }}"
       
