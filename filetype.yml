@@ -9,6 +9,6 @@
       
     - name: Set variables
       debug:
-        msg: "{{ items }}"
+        msg: "{{ item }}"
       with_items: "{{ file_name.stdout_lines }}"
       
