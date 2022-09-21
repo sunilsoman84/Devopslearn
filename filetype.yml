@@ -15,5 +15,5 @@
       
     - name: some name
       shell: cat {{ item }}
-      with_items: "{{ op_value.stdout_lines }}"
+      with_items: "{{ op_value }}"
       
