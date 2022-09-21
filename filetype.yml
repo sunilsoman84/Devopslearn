@@ -15,11 +15,9 @@
     - name: some name
       #shell: cat {{ item }}
       set_fact:
-        annoying: 
-          - "{{ item }}"
-      with_items: "{{ file_name.stdout_lines }}"
+      myvar: "{{ file_name.stdout }}"
       
     - name: Show information
       debug:
-        var: annoying
+        msg: "{{ myvar }}"
       
